@@ -23,7 +23,11 @@
     
       url = url_input.val();
       
-      $.post()
+      $.post('/short/date?' + $.param({url: url}), function() {
+      
+      })
+        
+      })
     
     } else {
       
