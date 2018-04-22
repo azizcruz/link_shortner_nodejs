@@ -69,3 +69,19 @@ footer {
   padding-top: 25px;
   border-top: 1px solid lightgrey;
 }
+
+.center {
+ margin: auto;
+ width: 50%;
+ text-align:center
+}
+
+#shorten {
+  padding: 5px;
+  border: 2px solid #000;
+  display: block;
+}
+
+#shorten:hover {
+ curso 
+}
