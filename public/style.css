@@ -92,6 +92,9 @@ h2 {
  margin-top: 30%; 
 }
 
-.cond {
- color:  
+#cond {
+  color: #4caf50; 
+  margin-top: 14px;
+  display: none;
+  /*color: #ff5252;*/
 }

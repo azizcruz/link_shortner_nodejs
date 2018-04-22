@@ -24,8 +24,10 @@
       url = url_input.val();
       
       $.post('/short/link?' + $.param({url: url}, function() {
-        
+        $("#cond").fadeIn(400);
+        setTimeout(function() {$("#cond").fadeOut(400)}, 400)
       }))
+      
       
         
     
