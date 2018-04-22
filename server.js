@@ -19,9 +19,9 @@ app.get("/", function (request, response) {
 // Handle post request.
 app.post("/short/link", function(request, response) {
   
-  var url = request.query.url
+  var orig_url = request.query.url
   
-  console.log("url: " + url)
+  console.log("original url: " + orig_url)
   response.end()
   
 })
