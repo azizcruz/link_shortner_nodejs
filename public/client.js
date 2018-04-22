@@ -9,12 +9,15 @@
       url = "";
   
   
+  // Get request to get all shortened urls.
+  
   
   // Get url from input when shorten is clicked.
   shorten_btn.on("click", function() {
     
     console.log()
     
+    // Validate input and make sure its a url.
     if((url_input.val() !== "" &&
        url_input.val().substr(url_input.val().length - 3) == "com") && (
        url_input.val().substr(0, 3) == "www" ||
@@ -23,6 +26,7 @@
     
       url = url_input.val();
       
+      // Send a post request to the server.
       $.ajax({
               type:    "POST",
               url:     '/short/link?' + $.param({url: url}),
@@ -40,7 +44,8 @@
     
     } else {
       
-      console.log("Please enter a valid url.")
+      $("#cond").fadeIn(400);
+      setTimeout(function() {$("#cond").fadeOut(400)}, 400) 
       
     }
     
