@@ -23,11 +23,18 @@
     
       url = url_input.val();
       
-      $.post('/short/link?' + $.param({url: url}, function() {
-        $("#cond").fadeIn(400);
-        setTimeout(function() {$("#cond").fadeOut(400)}, 400)
-      }))
-      
+      $.ajax({
+              type:    "POST",
+              url:     '/short/link?' + $.param({url: url}),
+              success: function(data) {
+                      $("#cond").fadeIn(400);
+                      setTimeout(function() {$("#cond").fadeOut(400)}, 400)              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+});
       
         
     

@@ -22,6 +22,7 @@ app.post("/short/link", function(request, response) {
   var url = request.query.url
   
   console.log("url: " + url)
+  response.end()
   
 })
 
