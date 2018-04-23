@@ -10,7 +10,22 @@
   
   
   // Get request to get all shortened urls.
+  $.ajax({
+    type: "GET",
+    url: "/links",
+    success: function(data) {
+       data.forEach((url) => {
+              $("#links ul").append("<li><a href=" + "short/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a></li><br>")
+            }) 
+      } else {
+        $("#links ul").append("<li>No Data Found</li>")
+      }
+    },
+    error: function() {
+    
+    
   
+  })
   
   // Get url from input when shorten is clicked.
   shorten_btn.on("click", function() {
@@ -37,7 +52,10 @@
              
                 
                       setTimeout(function() {$("#cond").fadeOut(400)}, 400)
-                      $("#links ul").append("<a href=" + data[data] + ">" + data[data] + "</a>")
+                      data.forEach((url) => {
+                        $("#links ul").append("<a href=" + "short/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a><br>")
+                      })
+                      
               },
               error:   function(jqXHR, textStatus, errorThrown) {
                     alert("Error, status = " + textStatus + ", " +
