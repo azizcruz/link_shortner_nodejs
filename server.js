@@ -5,6 +5,9 @@
 var express = require('express');
 var app = express();
 
+// Object to hold links.
+const shortenedLinks = {}
+
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
@@ -21,7 +24,9 @@ app.post("/short/link", function(request, response) {
   
   var orig_url = request.query.url
   
-  console.log("original url: " + orig_url)
+  // Shorten new link.
+  shortenedLinks["shorten" + Math.floor((Math.random() * 100000) + 1)] = orig_url;
+  console.log(shortenedLinks);
   response.end()
   
 })

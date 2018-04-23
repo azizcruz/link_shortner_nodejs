@@ -15,7 +15,6 @@
   // Get url from input when shorten is clicked.
   shorten_btn.on("click", function() {
     
-    console.log()
     
     // Validate input and make sure its a url.
     if((url_input.val() !== "" &&
@@ -31,6 +30,8 @@
               type:    "POST",
               url:     '/short/link?' + $.param({url: url}),
               success: function(data) {
+                      $("#cond").css("color", "#4caf50")
+                      $("#cond").text("success");
                       $("#cond").fadeIn(400);
                       setTimeout(function() {$("#cond").fadeOut(400)}, 400)              },
               error:   function(jqXHR, textStatus, errorThrown) {
@@ -44,6 +45,8 @@
     
     } else {
       
+      $("#cond").css("color", "#ff5252")
+      $("#cond").text("failed");
       $("#cond").fadeIn(400);
       setTimeout(function() {$("#cond").fadeOut(400)}, 400) 
       
