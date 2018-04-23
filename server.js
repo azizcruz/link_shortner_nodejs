@@ -52,13 +52,13 @@ app.get("/redirect/:link", function(request, response) {
   var original_link = shortenedLinks.map(function(link) {
     if(link.shortened_url === shortened_link) {
       // Return the original url.
-      return link.original_url
+      return link
     }
     
   })
-  
-  response.status(301).redirect("http://" + original_link)
-  console.log(original_link)
+  //response.status(301).redirect("http://" + original_link)
+  //TODO from here there is a strange comma come after mapping.
+  console.log()
   response.end();
 })
 
