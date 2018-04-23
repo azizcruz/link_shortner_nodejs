@@ -50,9 +50,9 @@
              
                 
                       setTimeout(function() {$("#cond").fadeOut(400)}, 400)
-                      data.forEach((url) => {
+                      
                         $("#links ul").append("- <a href=" + "/redirect/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a><br>")
-                      })
+                      
                       
               },
               error:   function(jqXHR, textStatus, errorThrown) {

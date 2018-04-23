@@ -25,7 +25,7 @@ app.post("/short/link", function(request, response) {
   var orig_url = request.query.url
   
   // Shorten new link.
-  var new_short = "shortened" + (Math.floor((Math.random()) * 100000) + 1) + ".com";
+  var new_short = "shortened" + (Math.floor((Math.random()) * 100000000) + 1) + ".com";
   var new_url = {
    original_url: orig_url,
    shortened_url: new_short
@@ -51,7 +51,7 @@ app.get("/redirect/:link", function(request, response) {
   shortenedLinks.forEach(function(link) {
     if(link.shortened_url == shortened_link) {
       // Return the original url.
-      oringinal_link = link.original_url;
+      original_link = link.original_url;
     }  
   })
   
