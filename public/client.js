@@ -16,7 +16,7 @@
     success: function(data) {
       if(data.length > 0) {
        data.forEach((url) => {
-              $("#links ul").append("<li><a href=" + "short/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a></li><br>")
+              $("#links ul").append("-<a href=" + "short/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a></li><br>")
             }) 
       } else {
         
@@ -51,7 +51,7 @@
                 
                       setTimeout(function() {$("#cond").fadeOut(400)}, 400)
                       data.forEach((url) => {
-                        $("#links ul").append("<li><a href=" + "short/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a></li><br>")
+                        $("#links ul").append("-<a href=" + "short/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a><br>")
                       })
                       
               },
