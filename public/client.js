@@ -51,7 +51,7 @@
                 
                       setTimeout(function() {$("#cond").fadeOut(400)}, 400)
                       
-                        $("#links ul").append("- <a href=" + "/redirect/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a><br>")
+                        $("#links ul").append("- <a href=" + "/redirect/" + url + ">" + url + "</a><br>")
                       
                       
               },
