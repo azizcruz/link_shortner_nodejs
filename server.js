@@ -25,9 +25,9 @@ app.post("/short/link", function(request, response) {
   var orig_url = request.query.url
   
   // Shorten new link.
-  shortenedLinks["shorten" + Math.floor((Math.random() * 100000) + 1)] = orig_url;
+  shortenedLinks["http://shortened" + (Math.floor((Math.random()) * 100000) + 1) + ".com"] = orig_url;
   console.log(shortenedLinks);
-  response.end()
+  response.send(shortenedLinks)
   
 })
 

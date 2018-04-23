@@ -33,6 +33,8 @@
                       $("#cond").css("color", "#4caf50")
                       $("#cond").text("success");
                       $("#cond").fadeIn(400);
+                
+                console.log(data)
                       setTimeout(function() {$("#cond").fadeOut(400)}, 400)              },
               error:   function(jqXHR, textStatus, errorThrown) {
                     alert("Error, status = " + textStatus + ", " +
