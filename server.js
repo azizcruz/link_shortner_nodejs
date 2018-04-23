@@ -6,7 +6,7 @@ var express = require('express');
 var app = express();
 
 // Object to hold links.
-const shortenedLinks = []
+var shortenedLinks = []
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -33,8 +33,6 @@ app.post("/short/link", function(request, response) {
   
   // Push the new link data into the array of links.
   shortenedLinks.push(new_url)
-  
-  console.log(shortenedLinks);
   response.send(shortenedLinks)
   
 })
@@ -52,13 +50,13 @@ app.get("/redirect/:link", function(request, response) {
   var original_link = shortenedLinks.map(function(link) {
     if(link.shortened_url === shortened_link) {
       // Return the original url.
-      return link
+      return link.original_url
     }
     
   })
   //response.status(301).redirect("http://" + original_link)
   //TODO from here there is a strange comma come after mapping.
-  console.log()
+  console.log(original_link)
   response.end();
 })
 
