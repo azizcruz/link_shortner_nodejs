@@ -14,16 +14,14 @@
     type: "GET",
     url: "/links",
     success: function(data) {
+      if(data.length > 0) {
        data.forEach((url) => {
               $("#links ul").append("<li><a href=" + "short/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a></li><br>")
             }) 
       } else {
-        $("#links ul").append("<li>No Data Found</li>")
+        
       }
-    },
-    error: function() {
-    
-    
+    }
   
   })
   
@@ -53,7 +51,7 @@
                 
                       setTimeout(function() {$("#cond").fadeOut(400)}, 400)
                       data.forEach((url) => {
-                        $("#links ul").append("<a href=" + "short/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a><br>")
+                        $("#links ul").append("<li><a href=" + "short/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a></li><br>")
                       })
                       
               },

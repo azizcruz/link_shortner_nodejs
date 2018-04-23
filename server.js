@@ -39,6 +39,12 @@ app.post("/short/link", function(request, response) {
   
 })
 
+// Get all links.
+app.get("/links", function(request, response) {
+  // Send links API.
+  response.send(shortenedLinks)
+})
+
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
