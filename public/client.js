@@ -34,8 +34,11 @@
                       $("#cond").text("success");
                       $("#cond").fadeIn(400);
                 
-                console.log(data)
-                      setTimeout(function() {$("#cond").fadeOut(400)}, 400)              },
+             
+                
+                      setTimeout(function() {$("#cond").fadeOut(400)}, 400)
+                      $("#links ul").append("<a href=" + data[data] + ">" + data[data] + "</a>")
+              },
               error:   function(jqXHR, textStatus, errorThrown) {
                     alert("Error, status = " + textStatus + ", " +
                           "error thrown: " + errorThrown
