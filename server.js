@@ -51,15 +51,15 @@ app.get("/redirect/:link", function(request, response) {
   var shortened_link = request.params.link;
   var original_link = shortenedLinks.map(function(link) {
     if(link.shortened_url === shortened_link) {
-      //return link.original_link;
-      console.log(link.original_link)
+      // Return the original url.
+      return link.original_url
     }
-    
     
   })
   
-  response.end()
-
+  response.status(301).redirect("http://" + original_link)
+  console.log(original_link)
+  response.end();
 })
 
 // listen for requests :)
