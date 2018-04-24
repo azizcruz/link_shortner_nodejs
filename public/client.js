@@ -73,4 +73,12 @@
     
   
   })
+  
+  $(document).ajaxStart(function(){
+    $(".lds-hourglass").css("display", "block");
+});
+
+$(document).ajaxComplete(function(){
+    $(".lds-hourglass").css("display", "none");
+});
 })()
