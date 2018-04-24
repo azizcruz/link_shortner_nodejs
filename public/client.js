@@ -37,7 +37,7 @@
        url_input.val().substr(0, 5) == "https")) {
     
       url = url_input.val();
-      
+      url_input.val("");
       // Send a post request to the server.
       $.ajax({
               type:    "POST",
@@ -51,14 +51,7 @@
                 
                       setTimeout(function() {$("#cond").fadeOut(400)}, 400)
                 
-                data.map(function(link){
-                  $("#links ul").append("- <a href=" + "/redirect/" + link["shortened_url"] + ">" + link["shortened_url"] + "</a><br>")
-                })
-                      
-                      
-                      
-                console.log(data)
-                      
+                                      
               },
               error:   function(jqXHR, textStatus, errorThrown) {
                     alert("Error, status = " + textStatus + ", " +
