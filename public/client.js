@@ -16,7 +16,7 @@
     success: function(data) {
       if(data.length > 0) {
        data.forEach((url) => {
-              $("#links ul").append("- <a href=" + "/redirect/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a><br>")
+              $("#links ul").append("- <a href=" + "/redirect/" + url["shortened_url"] + ">" + url["shortened_url"]  + "</a> => " + url["original_url"]   + "<br>")
             }) 
       } else {
         
