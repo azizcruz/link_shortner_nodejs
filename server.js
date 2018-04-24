@@ -28,12 +28,12 @@ app.post("/short/link", function(request, response) {
   var new_short = "shortened" + (Math.floor((Math.random()) * 100000000) + 1) + ".com";
   var new_url = {
    original_url: orig_url,
-   shortened_url: "http://redirect/" + new_short
+   shortened_url: new_short
   }
   
   // Push the new link data into the array of links.
-  // shortenedLinks.push(new_url)
-  response.send(new_url)
+  shortenedLinks.push(new_url)
+  response.send(shortenedLinks)
   
 })
 
@@ -43,22 +43,22 @@ app.get("/links", function(request, response) {
   response.send(shortenedLinks)
 })
 
-// // Redirect to the original link.
-// app.get("/redirect/:link", function(request, response) {
+// Redirect to the original link.
+app.get("/redirect/:link", function(request, response) {
 
-//   var shortened_link = request.params.link;
-//   var original_link = "";
-//   shortenedLinks.forEach(function(link) {
-//     if(link.shortened_url == shortened_link) {
-//       // Return the original url.
-//       original_link = link.original_url;
-//     }  
-//   })
+  var shortened_link = request.params.link;
+  var original_link = "";
+  shortenedLinks.forEach(function(link) {
+    if(link.shortened_url == shortened_link) {
+      // Return the original url.
+      original_link = link.original_url;
+    }  
+  })
   
   
-//   response.status(301).redirect("http://" + original_link)
-//   response.end();
-// })
+  response.status(301).redirect("http://" + original_link)
+  response.end();
+})
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {

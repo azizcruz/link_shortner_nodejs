@@ -9,7 +9,7 @@
       url = "";
   
   
-  Get request to get all shortened urls.
+  // Get request to get all shortened urls.
   $.ajax({
     type: "GET",
     url: "/links",
@@ -50,8 +50,12 @@
              
                 
                       setTimeout(function() {$("#cond").fadeOut(400)}, 400)
+                
+                data.map(function(link){
+                  $("#links ul").append("- <a href=" + "/redirect/" + link["shortened_url"] + ">" + link["shortened_url"] + "</a><br>")
+                })
                       
-                         $("#links ul").append("- <a href=" + "/redirect/" + url + ">" + url + "</a><br>")
+                      
                       
                 console.log(data)
                       
